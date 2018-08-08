@@ -8495,7 +8495,7 @@ var WebSocket = function () {
             if (complete) {
                 complete(this);
             }
-            return this.socket.close.apply(this);
+            return this.socket.close();
         }
     }, {
         key: "connect",
@@ -8895,7 +8895,7 @@ var Share = function () {
                         if (object && object.fail) {
                             object.fail(result);
                         }
-                    } else if (retCode === 2) {
+                    } else {
                         BK.Script.log(1, 1, "分享失败，用户取消分享：" + retCode);
                         if (object && object.fail) {
                             object.fail(result);
@@ -8906,13 +8906,16 @@ var Share = function () {
                     }
                 });
             } else {
+                var result = {
+                    "errMsg": "shareAppMessage:ok",
+                    shareTickets: [1]
+                };
                 if (object && object.fail) {
-                    object.fail();
+                    object.fail(result);
                 }
-            }
-
-            if (object && object.complete) {
-                object.complete();
+                if (object && object.complete) {
+                    object.complete(result);
+                }
             }
         }
     }, {
