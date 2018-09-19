@@ -11,6 +11,7 @@
 1. 适配层提供的wx.login接口会直接返回用户的openid与openkey，因此后台登录校验逻辑需要修改。
 2. 游戏后台使用前端传递的openid与openkey 与玩一玩的后台通信进行后台鉴权
 3. 道具上架逻辑与微信体验不一致,需开发者在hudong.qq.com上架，并开发对应逻辑
+4.如果是白鹭引擎转换的游戏，请在main.js里面添加window.EGRET_GAME = true，放在entry.js加载之前
 
 # 如何使用工具
 开发者可选择两种方式来使用适配工具
