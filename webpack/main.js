@@ -7,19 +7,19 @@ window["sharedCanvas"] = {}
 window.global=this;
 var console = {
     log: function (msg) {
-        BK.Script.log(1, 0, "console log: " + contact(arguments))
+        BK.Script.log(2, 2, "console log: " + contact(arguments))
     },
     warn:function (msg) {
-        BK.Script.log(2, 0, "console warn: " + contact(arguments))
+        BK.Script.log(3, 3, "console warn: " + contact(arguments))
     },
     error: function (msg) {
-        BK.Script.log(3, 0, "console error: " + contact(arguments))
+        BK.Script.log(4, 4, "console error: " + contact(arguments))
     },
     info:function (msg) {
-        BK.Script.log(4, 0, "console info: " + contact(arguments))
+        BK.Script.log(5, 5, "console info: " + contact(arguments))
     },
     debug:function (msg) {
-        BK.Script.log(5, 0, "console debug: " + contact(arguments))
+        BK.Script.log(6, 6, "console debug: " + contact(arguments))
     }
 };
 function contact(list){
