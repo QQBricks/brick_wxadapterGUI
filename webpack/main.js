@@ -40,6 +40,7 @@ function contact(list){
 if(typeof window.EGRET_GAME === 'undefined'){
     window.promise = {};
 }
+window.LOG_ENABLE=true;
 BK.Script.logToConsole = 1;
 BK.Script.loadlib("GameRes://qqPlayCore.js");
 BK.Script.loadlib("GameRes://brick_wxadapter.js");
