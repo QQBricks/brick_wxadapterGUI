@@ -62,6 +62,7 @@ if(BK.FileUtil.isFileExist(configPath)){
 
 if(window.ENGINE_NAME  === 'egret'){
     window.promise = {};
+    window.EGRET_GAME = true;
 }
 BK.Script.logToConsole = window.LOG_MODE_DEBUG ? 1 : 0;
 BK.Script.loadlib("GameRes://qqPlayCore.js");
