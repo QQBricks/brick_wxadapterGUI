@@ -3,7 +3,6 @@ var GameGlobal = this;
 var window = this;
 var global = this;
 window["isNewVersion"] = true;
-window["sharedCanvas"] = {}
 window.global=this;
 var console = {
     log: function (msg) {
@@ -68,6 +67,7 @@ BK.Script.logToConsole = window.LOG_MODE_DEBUG ? 1 : 0;
 BK.Script.loadlib("GameRes://qqPlayCore.js");
 BK.Script.loadlib("GameRes://brick_wxadapter.js");
 BK.Script.loadlib("GameRes://promise.js");
+window["sharedCanvas"] = wx.createCanvas();
 BK.Script.loadlib("GameRes://entry.js");
 
 
