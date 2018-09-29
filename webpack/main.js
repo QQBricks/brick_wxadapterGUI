@@ -3,7 +3,7 @@ var GameGlobal = this;
 var window = this;
 var global = this;
 window["isNewVersion"] = true;
-window.global=this;
+window.global={};
 var console = {
     log: function (msg) {
         if(window.LOG_MODE_DEBUG) {
