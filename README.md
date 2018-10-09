@@ -15,9 +15,70 @@
 
 ## 转换后还需做哪些
 1. 适配层提供的wx.login接口会直接返回用户的openid与openkey，因此后台登录校验逻辑需要修改。
+
 2. 游戏后台使用前端传递的openid与openkey 与玩一玩的后台通信进行后台鉴权
+
 3. 道具上架逻辑与微信体验不一致,需开发者在hudong.qq.com上架，并开发对应逻辑
+
 4. 如果是白鹭引擎转换的游戏，请在main.js里面添加window.EGRET_GAME = true，放在entry.js加载之前
+
+5. 排行榜更新内容，玩一玩平台只允许上传整数类型的分数，上传的key只能为score或a1...a16，每次拉排行榜的时候需要指定拉去的类型比如score或者a1...
+
+   ```javascript
+   //上传分数
+   wx.setUserCloudStorage({
+       KVDataList: [{
+       key:"score",
+       value:1232
+     },{
+       key:"a1",
+       value:1322
+     },{
+       key:"a2",
+       value:3122
+     }],
+       success: function (res) {
+         console.error('--success res:', res);
+       },
+       fail: function (res) {
+         console.error('--fail res:', res);
+       },
+       complete: function (res) {
+         console.error('--complete res:', res);
+       },
+     });
+   
+   //拉取排行榜
+     wx.getFriendCloudStorage({
+       type:"a1",
+        success: function (res) {
+         console.error('--get success res:', JSON.stringify(res));
+       },
+       fail: function (res) {
+         console.error('--get fail res:', JSON.stringify(res));
+       },
+       complete: function (res) {
+         console.error('--get complete res:', JSON.stringify(res));
+       }
+     });
+   
+     wx.getFriendCloudStorage({
+       type:"a2",
+        success: function (res) {
+         console.error('--get success res:', JSON.stringify(res));
+       },
+       fail: function (res) {
+         console.error('--get fail res:', JSON.stringify(res));
+       },
+       complete: function (res) {
+         console.error('--get complete res:', JSON.stringify(res));
+       }
+     });
+   
+   排行榜数据例子：
+   [{"avatarUrl":"http://thirdqq.qlogo.cn/g?b=sdk&k=cq869okDUicXE3mWcdQpsMw&s=100&t=1532845390","nickname":"俊采星驰","openid":"","self":1,"KVDataList":[{"key":"a1","value":1322}]}]
+   ```
+
 
 # 如何使用工具
 开发者可选择两种方式来使用适配工具
