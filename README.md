@@ -83,7 +83,22 @@
 # 如何使用工具
 开发者可选择两种方式来使用适配工具
 1. GUI打包工具
+
 2. webpack脚本
+
+3. 本地调试方法
+
+   1.点击右上角左边那三个点
+
+   2.在弹框中选择“关闭游戏校验”，并且点击
+
+   3.把游戏资源(一般是entry.js)提交到/sdcard/tencent/mobileqq/.apollo/game/gameid这个目录下
+
+   4.重新启动游戏
+
+   注意事项
+
+   .apollo是一个隐藏目录
 
 ## GUI打包工具
 <a href="https://github.com/QQBricks/brick_wxadapterGUI" target="_blank"> github下载地址</a>
