@@ -45,8 +45,8 @@ window.LOG_MODE_DEBUG = true;
 window.ENGINE_NAME = "";
 var configPath = "GameRes://gameConfig.json";
 if(BK.FileUtil.isFileExist(configPath)){
-    const LOG_MODE = "debug";
-    const ENGINE = "engine";
+    var LOG_MODE = "debug";
+    var ENGINE = "engine";
     var configList = JSON.parse(BK.FileUtil.readFile(configPath).readAsString(true));
     if(configList){
         window.LOG_MODE_DEBUG = !!configList[LOG_MODE];
